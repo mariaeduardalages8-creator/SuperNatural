@@ -1,0 +1,518 @@
+:root {
+  --bg-main: #0b0b0e;
+  --bg-secondary: #15151c;
+  --accent: #8b0000;
+  --text-main: #f1f1f1;
+  --text-muted: #b0b0b0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 {
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-size: 2rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+section {
+  padding: 100px 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.intro {
+  height: 100vh;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.95)),
+    url("assets/home2.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.intro-content {
+  margin-left: 8%;
+  max-width: 600px;
+  animation: fadeIn 1.2s ease;
+}
+
+.intro h1 {
+  font-family: 'Bebas Neue';
+  font-size: 5rem;
+  letter-spacing: 4px;
+  color: #8b0000;
+}
+.intro {
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+}
+
+.tagline {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.description {
+  margin-top: 1rem;
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h3 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(139,0,0,0.3);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.card h4 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+footer {
+  background: #000;
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .home h2 {
+    font-size: 2.8rem;
+  }
+}
+.about {
+  background: #0e0e12;
+  padding: 120px 2rem;
+}
+
+.about-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.section-tag {
+  color: #8b0000;
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+}
+
+.about h2 {
+  font-family: 'Bebas Neue';
+  font-size: 3rem;
+  margin: 1rem 0 2rem;
+}
+
+.about p {
+  color: #c0c0c0;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+}
+
+.about strong {
+  color: #ffffff;
+}
+.timeline {
+  background: #0b0b0e;
+  padding: 140px 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(139, 0, 0, 0.8),
+    rgba(139, 0, 0, 0.4)
+  );
+  transform: translateX(-50%);
+  opacity: 0.6;
+}
+
+.timeline-container {
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+}
+
+.timeline-item {
+  width: 45%;
+  padding: 30px 40px;
+  position: relative;
+  margin-bottom: 80px;
+  background: #222;
+  border-left: 4px solid #8b0000;
+  box-shadow: 0 0 40px rgba(139, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s forwards;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 40px rgba(139, 0, 0, 0.4);
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  left: 55%;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  width: 14px;
+  height: 14px;
+  background: #8b0000;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #8b0000;
+}
+
+.timeline-item:nth-child(odd)::before {
+  right: -52px;
+}
+
+.timeline-item:nth-child(even)::before {
+  left: -52px;
+}
+
+.timeline-item h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.timeline-item p {
+  color: #c9c9c9;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    padding-left: 60px;
+  }
+
+  .timeline-item::before {
+    left: 14px !important;
+  }
+}
+.timeline-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4.5rem;
+  color: #8b0000;
+  text-align: center;
+  letter-spacing: 6px;
+  margin-bottom: 120px;
+  text-shadow: 
+    0 0 15px rgba(139, 0, 0, 0.6),
+    0 0 40px rgba(139, 0, 0, 0.3);
+}
+
+.curiosidades {
+  background: #0b0b0e;
+  padding: 160px 2rem;
+  text-align: center;
+}
+
+.curiosidades-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4.5rem;
+  color: #8b0000;
+  letter-spacing: 6px;
+  text-shadow: 0 0 30px rgba(139,0,0,.6);
+}
+
+.curiosidades-subtitle {
+  color: #aaa;
+  margin: 20px 0 100px;
+}
+
+.curiosidades-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+.curiosidade-card {
+  background: linear-gradient(160deg, #111, #090909);
+  border: 1px solid rgba(139,0,0,.3);
+  padding: 40px 30px;
+  position: relative;
+  cursor: pointer;
+  transition: all .4s ease;
+  box-shadow: 0 0 30px rgba(0,0,0,.8);
+}
+
+.curiosidade-card:hover {
+  transform: translateY(-10px);
+}
+
+.lock {
+  font-size: 2rem;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.tag {
+  font-size: .7rem;
+  letter-spacing: 2px;
+  color: #8b0000;
+}
+
+.curiosidade-card h3 {
+  margin: 20px 0;
+  color: #fff;
+}
+
+.hidden-text {
+  color: #bbb;
+  line-height: 1.6;
+  filter: blur(6px);
+  opacity: .3;
+  transition: all .4s ease;
+}
+
+.curiosidade-card.unlocked {
+  border-color: #8b0000;
+  box-shadow: 0 0 60px rgba(139,0,0,.5);
+}
+
+.curiosidade-card.unlocked .hidden-text {
+  filter: blur(0);
+  opacity: 1;
+}
+
+.curiosidade-card.unlocked .lock {
+  content: "🔓";
+}
+.personagens {
+  background: #0b0b0e;
+  padding: 160px 2rem;
+  text-align: center;
+}
+
+.personagens-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4.5rem;
+  color: #8b0000;
+  letter-spacing: 6px;
+  text-shadow: 0 0 30px rgba(139,0,0,.6);
+}
+
+.personagens-subtitle {
+  color: #aaa;
+  margin: 20px 0 100px;
+}
+
+.personagens-grid {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 50px;
+}
+
+.personagem-card {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  height: 420px;
+  box-shadow: 0 0 40px rgba(0,0,0,.8);
+  cursor: pointer;
+}
+
+.personagem-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.1);
+  transition: transform .6s ease, filter .6s ease;
+}
+
+.personagem-card:hover img {
+  transform: scale(1.08);
+  filter: grayscale(0);
+}
+
+.personagem-info {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.9),
+    rgba(0,0,0,.2),
+    transparent
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  text-align: left;
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+
+.personagem-card:hover .personagem-info {
+  opacity: 1;
+}
+
+.personagem-info h3 {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.personagem-info span {
+  color: #8b0000;
+  font-size: .9rem;
+  letter-spacing: 2px;
+}
+
+.personagem-info p {
+  color: #ccc;
+  margin-top: 10px;
+  font-size: .95rem;
+  line-height: 1.5;
+}
+#music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; 
+  background: #b30000;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 9999;
+  box-shadow: 0 0 15px rgba(179, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+#music-btn:hover {
+  background: #ff0000;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
+}
+.about {
+  background: var(--bg-main);
+  padding: 120px 2rem;
+}
